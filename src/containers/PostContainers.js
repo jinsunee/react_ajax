@@ -37,28 +37,34 @@ class PostContainer extends Component {
            fetching : true //requesting..
         });
 
-        //wait for two promises
-        const info = await Promise.all([
-            service.getPost(postId),
-            service.getComments(postId)
-        ]);
+        try{
+            //wait for two promises
+            const info = await Promise.all([
+                service.getPost(postId),
+                service.getComments(postId)
+            ]);
 
-        //Object destructuring Syntax, takes out required values and create references to them
-        const {title, body} = info[0].data; //객체 비구조화 할당 문법 -> 필요한 값을 객체에서 꺼내서 그 값을 가지고 레퍼런스를 만들어준다.
+            //Object destructuring Syntax, takes out required values and create references to them
+            const {title, body} = info[0].data; //객체 비구조화 할당 문법 -> 필요한 값을 객체에서 꺼내서 그 값을 가지고 레퍼런스를 만들어준다.
 
-        const comments = info[1].data;
+            const comments = info[1].data;
 
-        this.setState({
-           postId,
-           post:{
-               title,
-               body
-           },
-           comments,
-           fetching:false //done! -> 요청이 끝났을 떄 false로 다시 설정해준다.
-        });
+            this.setState({
+                postId,
+                post: {
+                    title,
+                    body
+                },
+                comments,
+                fetching: false //done! -> 요청이 끝났을 떄 false로 다시 설정해준다.
+            });
+        }catch(e){
+            this.setState({
+                fetching:false
+            });
+               console.log('error occurred', e);
+        }
 
-        console.log(info);
     }
 
     handleNavigateClick = (type) => {
@@ -83,6 +89,7 @@ class PostContainer extends Component {
                 <Navigator
                     postId={postId}
                     disabled={fetching}
+                    onClick={this.handleNavigateClick}
                 />
                 <Post
                     title={post.title}
