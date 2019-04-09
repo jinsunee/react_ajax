@@ -1,0 +1,11 @@
+.PostWrapper{
+    width:50rem;
+    margin:0 auto;
+}
+
+/*화면이 768px미만일시에는 가로 사이즈를 비유렝 맞춰 90%로 설정하게 함.*/
+@media (max-width: 768px){
+    .PostWrapper{
+        width:90%;
+    }
+}
