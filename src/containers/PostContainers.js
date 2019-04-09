@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { PostWrapper, Navigator, Post } from '../components';
 import * as service from '../services/post';
+import Warning from "../components/Warning/Warning";
 
 
 class PostContainer extends Component {
@@ -15,7 +16,8 @@ class PostContainer extends Component {
                 title: null,
                 body : null
             },
-            comments : []
+            comments : [],
+            warningVisibility:false
         }
     }
 
@@ -30,6 +32,22 @@ class PostContainer extends Component {
     //     const comments = await service.getComments(postId);
     //     console.log(comments);
     // }
+
+    showWaring = () => {
+        this.setState({
+            warningVisibility:true
+        })
+
+        //after 1.5 sec
+
+        setTimeout(
+            () => {
+                this.setState({
+                    warningVisibility: false
+                })
+            }, 1500
+        );
+    }
 
     fetchPostInfo = async (postId) => {
 
@@ -62,7 +80,7 @@ class PostContainer extends Component {
             this.setState({
                 fetching:false
             });
-               console.log('error occurred', e);
+            this.showWaring();
         }
 
     }
@@ -80,8 +98,10 @@ class PostContainer extends Component {
 
 
 
+
+
     render() {
-        const {postId, fetching, post, comments} = this.state; //객체 비구조화 할당 문법을 사용하므로써, this.state.post.title이렇게 해야하는것을 바로 post.title로 할 수 있음.
+        const {postId, fetching, post, comments, warningVisibility} = this.state; //객체 비구조화 할당 문법을 사용하므로써, this.state.post.title이렇게 해야하는것을 바로 post.title로 할 수 있음.
                                                                 //disabled 속성 -> 데이터를 불러오는 중일땐 버튼을 비활성화 하도록 하는것
 
         return (
@@ -96,6 +116,7 @@ class PostContainer extends Component {
                     body={post.body}
                     comments={comments}
                 />
+                <Warning visible={warningVisibility} message="That post does not exist"/>
             </PostWrapper>
         );
     }

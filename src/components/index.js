@@ -5,7 +5,8 @@ import PostWrapper from './PostWrapper/PostWrapper';
 import Navigator from './Navigator/Navigator';
 import Post from './Post/Post';
 import CommentList from './CommentList/CommentList';
-import Comment from './Comment/Comment'
+import Comment from './Comment/Comment';
+import Warning from './Warning/Warning'
 
 
 export {
@@ -14,5 +15,6 @@ export {
     Navigator,
     Post,
     CommentList,
-    Comment
+    Comment,
+    Warning
 };
