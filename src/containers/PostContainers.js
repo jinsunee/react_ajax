@@ -61,6 +61,9 @@ class PostContainer extends Component {
         console.log(info);
     }
 
+
+
+
     render() {
         const {postId, fetching, post, comments} = this.state; //객체 비구조화 할당 문법을 사용하므로써, this.state.post.title이렇게 해야하는것을 바로 post.title로 할 수 있음.
                                                                 //disabled 속성 -> 데이터를 불러오는 중일땐 버튼을 비활성화 하도록 하는것
