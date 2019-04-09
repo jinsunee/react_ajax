@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04bc2e71-7956-48a1-b95e-4aa8bf99d82a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Comment/Comment.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Comment/Comment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CommentList/CommentList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CommentList/CommentList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigator/Navigator.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigator/Navigator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Post/Post.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Post/Post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
