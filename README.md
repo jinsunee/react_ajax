@@ -3,8 +3,7 @@
   
   
   * JSONPlaceholder (https://jsonplaceholder.typicode.com/)
- -> Fake Online REST API for Testing and Prototyping
- -> 가짜 api
+ - Fake Online REST API for Testing and Prototyping, 가짜 api
 
 ## result
 http://jinsunlovesdoni.surge.sh/
